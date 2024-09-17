@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: discovery-server
+  cloud:
+    eureka:
+      server:
+        enable-self-preservation: false
+  eureka:
+    client:
+      registerWithEureka: false
+      fetchRegistry: false
+    server:
+      enableSelfPreservation: false

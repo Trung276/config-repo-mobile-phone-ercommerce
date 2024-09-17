@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: auth-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/auth_db
+    username: root
+    password: 123456
+  jwt:
+    secret: eyJhbGciOiJIUzI1NiJ9.eyJSb2xlIjoiQWRtaW4iLCJJc3N1ZXIiOiJJc3N1ZXIiLCJVc2VybmFtZSI6IkphdmFJblVzZSIsImV4cCI6MTcyNjU0MzQxNSwiaWF0IjoxNzI2NTQzNDE1fQ.9ZNsOL83C6f_4tHT6SslgEQliQWQPQDPfCgoAo1YXPA
+    expiration: 3600
+  security:
+    oauth2:
+      resource server:
+        jwt:
+          issuer-uri: http://localhost:8080
+  eureka:
+    client:
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka/
+    instance:
+      preferIpAddress: true
+
