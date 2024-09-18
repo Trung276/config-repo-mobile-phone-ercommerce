@@ -1,19 +1,9 @@
-spring:
-  application:
-    name: discovery-server
-  cloud:
-    config:
-      uri: http://localhost:8888  # Địa chỉ của Config Server
-      profile: default
-      label: main
-    config:
-      import: configserver:   # Thêm thuộc tính này
-  eureka:
-    client:
-      register-with-eureka: false  # Discovery Server không cần tự đăng ký vào Eureka
-      fetch-registry: false        # Discovery Server không cần tải registry từ các Eureka khác
-    server:
-      enable-self-preservation: false  # Tắt tính năng tự bảo vệ
-
 server:
-  port: 8761  # Cổng cho Discovery Server
+  port: 8761
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+  server:
+    enable-self-preservation: false
