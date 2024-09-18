@@ -3,7 +3,11 @@ spring:
     name: discovery-server
   cloud:
     config:
-      uri: http://localhost:8888  # Địa chỉ của Config Server (dùng khi file bootstrap.yml local không đủ)
+      uri: http://localhost:8888  # Địa chỉ của Config Server
+      profile: default
+      label: main
+    config:
+      import: configserver:   # Thêm thuộc tính này
   eureka:
     client:
       register-with-eureka: false  # Discovery Server không cần tự đăng ký vào Eureka
