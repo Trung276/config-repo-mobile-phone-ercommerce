@@ -2,12 +2,14 @@ spring:
   application:
     name: discovery-server
   cloud:
-    eureka:
-      server:
-        enable-self-preservation: false
+    config:
+      uri: http://localhost:8888  # Địa chỉ của Config Server (dùng khi file bootstrap.yml local không đủ)
   eureka:
     client:
-      registerWithEureka: false
-      fetchRegistry: false
+      register-with-eureka: false  # Discovery Server không cần tự đăng ký vào Eureka
+      fetch-registry: false        # Discovery Server không cần tải registry từ các Eureka khác
     server:
-      enableSelfPreservation: false
+      enable-self-preservation: false  # Tắt tính năng tự bảo vệ
+
+server:
+  port: 8761  # Cổng cho Discovery Server
